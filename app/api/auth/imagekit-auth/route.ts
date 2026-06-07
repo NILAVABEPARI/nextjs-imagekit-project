@@ -15,6 +15,7 @@ export async function GET() {
 
         return Response.json({ token, expire, signature, publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY })
     } catch (error) {
+        console.error("Error while authenticating for ImageKit: ", error)
         return Response.json(
             { error: "Authentication for Imagekit failed" },
             { status: 500 }
@@ -38,6 +39,6 @@ export async function GET() {
     Frontend uses those params to upload directly to ImageKit
         ↓
     ImageKit validates the signature ✅
-    
+
     * Your private key never leaves your server.
 */
