@@ -1,5 +1,10 @@
 import mongoose, { Schema, model, models } from "mongoose";
 
+/*
+* An interface only exists at compile time — TypeScript erases it completely from the final JavaScript. 
+* A const survives into runtime, meaning you can actually use its values in your code.
+* Type safety — as const ensures nobody accidentally mutates or widens the values
+*/
 export const VIDEO_DIMENSIONS = {
     width: 1080,
     height: 1920
